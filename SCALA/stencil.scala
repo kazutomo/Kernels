@@ -1,19 +1,19 @@
 // based on Java version
 object stencil {
-    def main (args: Array[String]) {
+    def main (args: Array[String]) : Unit = {
         System.out.println("Parallel Research Kernels.")
         System.out.println("Scala pipeline execution on 2D grid.")
 
         /*******************************************************************
         **read and test input parameters
          *******************************************************************/
-        def error_and_exit(s: String) {
+        def error_and_exit(s: String) : Unit = {
             println(s)
             System.exit(1)
         }
 
         if (args.length < 2 || args.length > 5){
-            error_and_exit("Usage: java transpose <# iterations> <array dimension> [<star/stencil> <radius> <tile size>]")
+            error_and_exit("Usage: scala transpose <# iterations> <array dimension> [<star/stencil> <radius> <tile size>]")
         }
 
         val iterations = args(0).toInt
